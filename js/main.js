@@ -1,3 +1,5 @@
+const API_BASE_URL = 'https://smart-erp-backend-expq.onrender.com'; // <-- Your Render backend URL
+
 function logout() {
   localStorage.clear();
   window.location.href = "index.html";
@@ -17,10 +19,12 @@ function clockIn(){
   const time = new Date().toLocaleTimeString();
   document.getElementById("clockStatus").textContent = "Clocked in at " + time;
 }
+
 function clockOut(){
   const time = new Date().toLocaleTimeString();
   document.getElementById("clockStatus").textContent = "Clocked out at " + time;
-  fetch("https://smart-erp-backend.onrender.com/api/projects")
+  
+  fetch(`${API_BASE_URL}/api/projects`)
     .then(response => response.json())
     .then(data => {
       console.log("Projects:", data);
