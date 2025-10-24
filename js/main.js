@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://smart-erp-backend-expq.onrender.com'; // <-- Your Render backend URL
+const API_BASE_URL = 'https://smart-erp-backend-nryk.onrender.com'; // <-- Your Render backend URL
 
 
 function logout() {
