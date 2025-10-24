@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartERP Login</title>
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light d-flex align-items-center justify-content-center vh-100">
+
+  <div class="card p-4 shadow" style="width:350px;">
+    <h4 class="text-center mb-3">SmartERP Login</h4>
+    <form id="loginForm">
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label>Password</label>
+        <input type="password" class="form-control" id="password" required>
+      </div>
+      <div class="mb-3">
+        <label>Role</label>
+        <select class="form-select" id="role">
+          <option value="admin">Admin</option>
+          <option value="manager">Manager</option>
+          <option value="employee">Employee</option>
+        </select>
+      </div>
+      <button class="btn btn-primary w-100" type="submit">Login</button>
+    </form>
+  </div>
+
+  <script src="lib/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

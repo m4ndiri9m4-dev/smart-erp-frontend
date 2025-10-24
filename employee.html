@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartERP - Employee Portal</title>
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark p-2">
+  <span class="navbar-brand">Employee Portal</span>
+  <button class="btn btn-outline-light btn-sm" onclick="logout()">Logout</button>
+</nav>
+
+<div class="container mt-4">
+  <div class="card p-3 mb-3">
+    <h6>Clock In / Out</h6>
+    <button class="btn btn-success me-2" onclick="clockIn()">Clock In</button>
+    <button class="btn btn-danger" onclick="clockOut()">Clock Out</button>
+    <p id="clockStatus" class="mt-2 small text-muted"></p>
+  </div>
+
+  <div class="card p-3 mb-3">
+    <h6>Upload Selfie</h6>
+    <input type="file" id="selfie" accept="image/*" class="form-control">
+  </div>
+
+  <div class="card p-3">
+    <h6>Location</h6>
+    <div id="empMap" style="height:300px;"></div>
+    <p id="locationText" class="mt-2 small text-muted"></p>
+  </div>
+</div>
+
+<script src="lib/bootstrap.bundle.min.js"></script>
+<script src="lib/leaflet.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const map = L.map('empMap').setView([14.6,120.98], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+  navigator.geolocation.getCurrentPosition(pos=>{
+    const {latitude,longitude}=pos.coords;
+    L.marker([latitude,longitude]).addTo(map);
+    document.getElementById('locationText').textContent = 
+      `Your location: ${latitude.toFixed(4)}, ${longitude.toFixed(4)}`;
+  });
+</script>
+</body>
+</html>

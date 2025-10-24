@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartERP - Manager Dashboard</title>
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-success p-2">
+  <span class="navbar-brand">Manager Dashboard</span>
+  <button class="btn btn-light btn-sm" onclick="logout()">Logout</button>
+</nav>
+
+<div class="container mt-4">
+  <h5>Project Overview</h5>
+  <table class="table table-striped mt-3">
+    <thead>
+      <tr>
+        <th>Project</th><th>Attendance %</th><th>Sales %</th><th>Progress</th>
+      </tr>
+    </thead>
+    <tbody id="projectTable">
+      <tr>
+        <td>Project Alpha</td><td>95%</td><td>87%</td>
+        <td><div class="progress"><div class="progress-bar" style="width:87%"></div></div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script src="lib/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

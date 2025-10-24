@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartERP - Admin Dashboard</title>
+  <link rel="stylesheet" href="lib/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <span class="navbar-brand">SmartERP Admin</span>
+    <button class="btn btn-light btn-sm" onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <div class="row g-3">
+    <div class="col-md-4">
+      <div class="card text-center p-3">
+        <h5>Total Employees</h5>
+        <h2 id="empCount">--</h2>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center p-3">
+        <h5>Projects</h5>
+        <h2 id="projectCount">--</h2>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-center p-3">
+        <h5>Total Sales (₱)</h5>
+        <h2 id="salesTotal">--</h2>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <div class="card p-3">
+        <h6>Attendance per Project</h6>
+        <canvas id="attendanceChart"></canvas>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card p-3">
+        <h6>Sales Target vs Actual</h6>
+        <canvas id="salesChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Leaflet Map -->
+  <div class="card mt-4 p-3">
+    <h6>Employee Location Map</h6>
+    <div id="map" style="height:400px;"></div>
+  </div>
+</div>
+
+<script src="lib/bootstrap.bundle.min.js"></script>
+<script src="lib/chart.min.js"></script>
+<script src="lib/leaflet.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/map.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
